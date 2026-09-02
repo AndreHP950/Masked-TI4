@@ -15,8 +15,6 @@ public class PlayerRB : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         segurarSpeed = speed;
         Cursor.lockState = CursorLockMode.Locked;
-
-        
         Cursor.visible = false;
     }
 
@@ -73,6 +71,7 @@ public class PlayerRB : MonoBehaviour
         if (collision.gameObject)// depois ver se coloca tag
         {
             Floored = true;
+            jumpCount = 0;
             
         }
     }
