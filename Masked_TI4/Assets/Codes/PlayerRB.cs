@@ -27,6 +27,15 @@ public class PlayerRB : MonoBehaviour
         Vector3 localDirection = new Vector3(x, 0f, z);
         Vector3 worldDirection = transform.TransformDirection(localDirection);
 
+       
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            AnimationController.instance.ControlarWalk(1);
+        }
+        if(Input.GetKeyUp(KeyCode.W))
+        {
+            AnimationController.instance.ControlarWalk(0);
+        }
 
         Vector3 velocity = rb.linearVelocity;
 
@@ -41,6 +50,7 @@ public class PlayerRB : MonoBehaviour
             jumpCount++;
             velocity.y = jumpforce;
             AudioManager.instance.PlaySFX(1); // Teste de Audio
+            AnimationController.instance.ControlarJump(1);
         }
         if(jumpCount >= 2 && Floored)
         {
@@ -73,6 +83,7 @@ public class PlayerRB : MonoBehaviour
         {
             Floored = true;
             jumpCount = 0;
+            AnimationController.instance.ControlarJump(0);
             
         }
     }
