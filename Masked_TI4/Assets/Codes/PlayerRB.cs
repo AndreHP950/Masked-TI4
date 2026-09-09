@@ -40,6 +40,7 @@ public class PlayerRB : MonoBehaviour
             Floored = false;
             jumpCount++;
             velocity.y = jumpforce;
+            AudioManager.instance.PlaySFX(1); // Teste de Audio
         }
         if(jumpCount >= 2 && Floored)
         {
@@ -73,6 +74,15 @@ public class PlayerRB : MonoBehaviour
             Floored = true;
             jumpCount = 0;
             
+        }
+    }
+
+    private void OnTriggerEnter(Collider other) // Para teste de audio. Pode remover depois se for o caso
+    {
+        if (other.gameObject.tag == "Coin")
+        {
+            AudioManager.instance.PlaySFX(2);
+            Destroy(other.gameObject);
         }
     }
 }
