@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerRB : MonoBehaviour
 {
     public float speed, jumpforce;
+    public bool wallrunning;
     float segurarSpeed;
     Rigidbody rb;
     Vector3 mov;
