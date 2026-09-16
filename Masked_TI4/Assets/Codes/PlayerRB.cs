@@ -11,6 +11,8 @@ public class PlayerRB : MonoBehaviour
     Vector3 mov;
     bool Floored = false;
     int jumpCount;
+    float x;
+    float z;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -22,61 +24,97 @@ public class PlayerRB : MonoBehaviour
 
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        x = Input.GetAxis("Horizontal");
+        z = Input.GetAxis("Vertical");
 
-        Vector3 localDirection = new Vector3(x, 0f, z);
-        Vector3 worldDirection = transform.TransformDirection(localDirection);
 
-       
-        if(Input.GetKeyDown(KeyCode.W))
+        
+        if (Input.GetKeyDown(KeyCode.W))
         {
             AnimationController.instance.ControlarWalk(1);
         }
-        if(Input.GetKeyUp(KeyCode.W))
+
+        if (Input.GetKeyUp(KeyCode.W))
         {
             AnimationController.instance.ControlarWalk(0);
         }
 
-        Vector3 velocity = rb.linearVelocity;
 
-
-        velocity.x = worldDirection.x * speed;
-        velocity.z = worldDirection.z * speed;
-
-
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2)
-        {
-            Floored = false;
-            jumpCount++;
-            velocity.y = jumpforce;
-            AudioManager.instance.PlaySFX(1); // Teste de Audio
-            AnimationController.instance.ControlarJump(1);
-        }
-        if(jumpCount >= 2 && Floored)
-        {
-            jumpCount = 0;
-        }
+        
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            speed = 2 * segurarSpeed;
+            speed = 2f * segurarSpeed;
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        else
         {
             speed = segurarSpeed;
         }
 
-        rb.linearVelocity = velocity;
-        print("Duble Jump:"+ jumpCount);
-        print("Florred" + Floored);
+
+       
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2)
+        {
+            Floored = false;
+
+            jumpCount++;
+
+           
+            Vector3 velocity = rb.linearVelocity;
+            velocity.y = jumpforce;
+
+            rb.linearVelocity = velocity;
+
+            AudioManager.instance.PlaySFX(1);
+            AnimationController.instance.ControlarJump(1);
+
+            Debug.Log("Jump: " + jumpCount);
+        }
+
     }
 
-    void LateUpdate()
+    void FixedUpdate()
     {
+        
+        Vector3 forward = Camera.main.transform.forward;
+        Vector3 right = Camera.main.transform.right;
+
+        
+        forward.y = 0f;
+        right.y = 0f;
+
+        forward.Normalize();
+        right.Normalize();
+
+
+       
+        Vector3 dir = (right * x + forward * z) * speed;
+
+
+        
+        Vector3 velocity = rb.linearVelocity;
+
+        velocity.x = dir.x;
+        velocity.z = dir.z;
+
+       
+        rb.linearVelocity = velocity;
+
+
+        
         Vector3 camDir = Camera.main.transform.forward;
-        camDir.y = 0;
-        transform.rotation = Quaternion.LookRotation(camDir);
+        camDir.y = 0f;
+
+        if (camDir.sqrMagnitude > 0.001f)
+        {
+            float yRotation = Quaternion.LookRotation(camDir).eulerAngles.y;
+
+            Quaternion targetRotation = Quaternion.Euler(0f, yRotation, 0f);
+
+            rb.MoveRotation(targetRotation);
+        }
     }
+
+
 
     private void OnCollisionEnter(Collision collision)
     {
