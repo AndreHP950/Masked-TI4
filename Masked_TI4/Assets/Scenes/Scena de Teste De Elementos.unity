@@ -2090,11 +2090,15 @@ MonoBehaviour:
     m_Bits: 8
   wallRunForce: 500
   wallClimbSpeed: 1.5
-  maxWallRunTime: 1.5
+  maxWallRunTime: 3
   upwardsRunKey: 304
   downwardsRunKey: 306
   wallCheckDistance: 0.7
   minJumpHeight: 2
+  exitWallTime: 2
+  wallJumpUpForce: 5
+  wallJumpSideForce: 5
+  jumpKey: 32
   orientation: {fileID: 1094890940}
 --- !u!1 &1123349251
 GameObject:

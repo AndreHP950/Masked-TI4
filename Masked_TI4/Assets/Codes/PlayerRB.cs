@@ -24,6 +24,8 @@ public class PlayerRB : MonoBehaviour
 
     void Update()
     {
+        if (wallrunning) return;
+
         x = Input.GetAxis("Horizontal");
         z = Input.GetAxis("Vertical");
 
