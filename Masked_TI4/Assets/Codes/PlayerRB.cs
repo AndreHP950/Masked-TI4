@@ -54,11 +54,11 @@ public class PlayerRB : MonoBehaviour
 
 
        
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2)
+        if (Input.GetKeyDown(KeyCode.Space) && Floored)
         {
             Floored = false;
 
-            jumpCount++;
+            //jumpCount++;
 
            
             Vector3 velocity = rb.linearVelocity;
@@ -69,7 +69,7 @@ public class PlayerRB : MonoBehaviour
             AudioManager.instance.PlaySFX(1);
             AnimationController.instance.ControlarJump(1);
 
-            Debug.Log("Jump: " + jumpCount);
+            //Debug.Log("Jump: " + jumpCount);
         }
 
     }
@@ -123,7 +123,7 @@ public class PlayerRB : MonoBehaviour
         if (collision.gameObject)// depois ver se coloca tag
         {
             Floored = true;
-            jumpCount = 0;
+            //jumpCount = 0;
             AnimationController.instance.ControlarJump(0);
             
         }
