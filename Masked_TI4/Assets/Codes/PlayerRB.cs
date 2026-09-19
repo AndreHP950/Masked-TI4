@@ -47,7 +47,7 @@ public class PlayerRB : MonoBehaviour
         {
             speed = 2f * segurarSpeed;
         }
-        else
+        if(Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = segurarSpeed;
         }
