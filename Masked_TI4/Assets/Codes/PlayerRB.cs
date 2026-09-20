@@ -33,12 +33,12 @@ public class PlayerRB : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.W))
         {
-            AnimationController.instance.ControlarWalk(1);
+            //AnimationController.instance.ControlarWalk(1);
         }
 
         if (Input.GetKeyUp(KeyCode.W))
         {
-            AnimationController.instance.ControlarWalk(0);
+            //AnimationController.instance.ControlarWalk(0);
         }
 
 
@@ -67,7 +67,7 @@ public class PlayerRB : MonoBehaviour
             rb.linearVelocity = velocity;
 
             AudioManager.instance.PlaySFX(1);
-            AnimationController.instance.ControlarJump(1);
+            //AnimationController.instance.ControlarJump(1);
 
             //Debug.Log("Jump: " + jumpCount);
         }
@@ -124,7 +124,7 @@ public class PlayerRB : MonoBehaviour
         {
             Floored = true;
             //jumpCount = 0;
-            AnimationController.instance.ControlarJump(0);
+            //AnimationController.instance.ControlarJump(0);
             
         }
     }
