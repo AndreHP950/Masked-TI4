@@ -1,0 +1,140 @@
+.options-screen-container {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.menu-content {
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.options-title {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 130px;
+    letter-spacing: 6px;
+    margin-bottom: 24px;
+    padding: 0;
+    -unity-font-style: bold;
+    -unity-font-definition: url('project://database/Assets/Fonts/Mohave-SemiBoldItalic.ttf');
+}
+
+.buttons-container {
+    align-items: flex-start;
+}
+
+.menu-btn {
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 30px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    padding: 0;
+    -unity-text-align: middle-left;
+    -unity-font-definition: url('project://database/Assets/Fonts/Mohave-Bold.ttf');
+    transition-property: color, scale;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+}
+
+.menu-btn:hover, .menu-btn:focus {
+    color: rgba(255, 255, 255, 1);
+    scale: 1.04 1.04;
+}
+
+.menu-btn:active {
+    color: rgba(200, 200, 200, 1);
+}
+
+.settings-container {
+    align-items: flex-start;
+    width: 100%;
+}
+
+.setting-row {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 28px;
+}
+
+.setting-label {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    padding: 0;
+    -unity-font-definition: url('project://database/Assets/Fonts/Mohave-Bold.ttf');
+}
+
+.custom-slider {
+    width: 320px;
+    margin: 0;
+}
+
+.custom-slider #unity-tracker {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-width: 0;
+    height: 4px;
+    border-radius: 0;
+}
+
+.custom-slider #unity-dragger {
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 12px;
+    height: 20px;
+    border-width: 0;
+    border-radius: 0;
+    margin-top: -8px;
+    transition-property: background-color, scale;
+    transition-duration: 0.2s;
+}
+
+.custom-slider #unity-dragger:hover {
+    background-color: rgba(255, 255, 255, 1);
+    scale: 1.1 1.1;
+}
+
+.back-btn {
+    margin-top: 10px;
+}
+
+.credits-columns {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.credits-column {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 80px;
+}
+
+.credits-section {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.credits-name {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+    padding: 0;
+    -unity-font-definition: url('project://database/Assets/Fonts/Mohave-Bold.ttf');
+}
+
+.credits-logo {
+    width: 240px;
+    height: 240px;
+    margin-top: 16px;
+    background-image: url("project://database/Assets/Textures/PucLogo.png?fileID=2800000&guid=d65c9e0f62083ca46a1e18f808cc9933&type=3#PucLogo");
+    -unity-background-scale-mode: scale-to-fit;
+}

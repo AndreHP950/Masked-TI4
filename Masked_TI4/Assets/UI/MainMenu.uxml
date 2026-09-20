@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElementsSchema.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=93797be790216c1499a63448e09d7b89&amp;type=3#MainMenuStyle"/>
+    <ui:VisualElement name="screen-container" class="screen-container">
+        <ui:Label text="version 0.1 build teste UI" name="version-label" class="version-text"/>
+        <ui:VisualElement name="title-container" class="title-container">
+            <ui:Label text="MASKED" name="title-label" class="title-main" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Mohave-SemiBoldItalic.ttf?fileID=12800000&amp;guid=b3212fc5ba675774e9c5690ac25fbbe2&amp;type=3#Mohave-SemiBoldItalic&quot;); font-size: 240px;"/>
+            <ui:Label text="TI 4 - PLATAFORMA" name="subtitle-label" class="title-sub" style="font-size: 51px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Mohave-Bold.ttf?fileID=12800000&amp;guid=7032093f1941f9344b2e2fd4d5c87b9a&amp;type=3#Mohave-Bold&quot;);"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="bottom-container" class="bottom-container">
+            <ui:Label text="PRESS ANY BUTTON" name="prompt-label" class="prompt-text" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Agdasima-Bold.ttf?fileID=12800000&amp;guid=9181bb81034468a409821c56beddcf11&amp;type=3#Agdasima-Bold&quot;);"/>
+        </ui:VisualElement>
+        <ui:Image name="puc-logo" class="corner-logo"/>
+        <ui:VisualElement name="fade-overlay" class="fade-overlay" />
+        
+    </ui:VisualElement>
+</ui:UXML>

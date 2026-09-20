@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElementsSchema.xsd" editor-extension-mode="False">
+    <Style src="OptionsMenuStyle.uss" />
+    
+    <ui:VisualElement name="screen-container" class="options-screen-container">
+        <ui:VisualElement name="menu-content" class="menu-content">
+            
+            <ui:Label text="CONFIGS" name="settings-title" class="options-title" />
+            
+            <ui:VisualElement name="settings-container" class="settings-container">
+                
+                <!-- Controle de Volume -->
+                <ui:VisualElement name="setting-row" class="setting-row">
+                    <ui:Label text="VOLUME GERAL" class="setting-label" />
+                    <ui:Slider name="volume-slider" low-value="0" high-value="1" value="0.8" class="custom-slider" />
+                </ui:VisualElement>
+
+                <!-- Botão Voltar -->
+                <ui:Button text="VOLTAR" name="btn-back" class="menu-btn back-btn" />
+
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

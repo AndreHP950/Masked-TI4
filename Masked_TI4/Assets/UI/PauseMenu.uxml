@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElementsSchema.xsd" editor-extension-mode="False">
+    <Style src="OptionsMenuStyle.uss" />
+    
+    <ui:VisualElement name="screen-container" class="options-screen-container">
+        <ui:VisualElement name="menu-content" class="menu-content">
+            
+            <ui:Label text="PAUSA" name="pause-title" class="options-title" />
+            
+            <ui:VisualElement name="buttons-container" class="buttons-container">
+                <ui:Button text="CONTINUAR" name="btn-resume" class="menu-btn" />
+                <ui:Button text="CONFIGS" name="btn-settings" class="menu-btn" />
+                <ui:Button text="MENU PRINCIPAL" name="btn-main-menu" class="menu-btn" />
+                <ui:Button text="SAIR" name="btn-quit" class="menu-btn" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

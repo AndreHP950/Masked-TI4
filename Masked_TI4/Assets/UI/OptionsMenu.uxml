@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElementsSchema.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/OptionsMenuStyle.uss?fileID=7433441132597879392&amp;guid=5e16942d393932a41a8d32b972f1bb33&amp;type=3#OptionsMenuStyle"/>
+    <ui:VisualElement name="screen-container" class="options-screen-container">
+        <ui:VisualElement name="menu-content" class="menu-content">
+            <ui:Label text="MASKED" name="game-title" class="options-title"/>
+            <ui:VisualElement name="buttons-container" class="buttons-container">
+                <ui:Button text="INICIAR" name="btn-start" class="menu-btn"/>
+                <ui:Button text="CONFIGS" name="btn-settings" class="menu-btn"/>
+                <ui:Button text="CRÉDITOS" name="btn-credits" class="menu-btn"/>
+                <ui:Button text="SAIR" name="btn-quit" class="menu-btn"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="fade-overlay" enabled="true" class="fade-overlay fade-overlay--active"/>
+    </ui:VisualElement>
+</ui:UXML>

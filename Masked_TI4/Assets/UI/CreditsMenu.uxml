@@ -1,0 +1,35 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElementsSchema.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/OptionsMenuStyle.uss?fileID=7433441132597879392&amp;guid=5e16942d393932a41a8d32b972f1bb33&amp;type=3#OptionsMenuStyle"/>
+    <ui:VisualElement name="screen-container" class="options-screen-container">
+        <ui:VisualElement name="menu-content" class="menu-content">
+            <ui:Label text="CRÉDITOS" name="credits-title" class="options-title"/>
+            <ui:VisualElement name="credits-columns" class="credits-columns">
+                <ui:VisualElement name="credits-column-left" class="credits-column">
+                    <ui:Label text="DESENVOLVIMENTO" class="setting-label"/>
+                    <ui:Label text="André Parreiras" class="credits-name"/>
+                    <ui:Label text="Daniel Freitas" class="credits-name"/>
+                    <ui:Label text="Gabriel Ramos" class="credits-name"/>
+                    <ui:Label text="João Pedro Crispi" class="credits-name"/>
+                    <ui:Label text="Lucas Bozzi" class="credits-name"/>
+                    <ui:Label text="Lucas de Lima" class="credits-name"/>
+                    <ui:Label text="Matheus Alvarenga" class="credits-name"/>
+                    <ui:Label text="Pedro Cerceau" class="credits-name"/>
+                    <ui:Label text="Thiago Gedeon" class="credits-name"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="credits-column-right" class="credits-column">
+                    <ui:VisualElement class="credits-section">
+                        <ui:Label text="ORIENTAÇÃO" class="setting-label"/>
+                        <ui:Label text="Luis Felipe Matsya de Aruanda Ramos Garrocho" class="credits-name"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="credits-section">
+                        <ui:Label text="INSTITUIÇÃO" class="setting-label"/>
+                        <ui:Label text="Jogos Digitais - 4º Período" class="credits-name"/>
+                        <ui:Label text="PUC Minas" class="credits-name"/>
+                        <ui:Image name="puc-logo" scale-mode="ScaleToFit" class="corner-logo credits-logo" style="height: 151px; width: 331px;"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Button text="VOLTAR" name="btn-back" class="menu-btn back-btn"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
