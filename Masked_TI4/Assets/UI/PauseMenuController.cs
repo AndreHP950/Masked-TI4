@@ -45,6 +45,7 @@ public class PauseMenuController : MonoBehaviour
         _isPaused = true;
         Time.timeScale = 0f;
         _uiDocument.enabled = true;
+        GameController.instance.LivrarCursor();
 
         LoadPauseMenu();
     }
@@ -72,6 +73,7 @@ public class PauseMenuController : MonoBehaviour
     public void ResumeGame()
     {
         if (_isTransitioning) return;
+        GameController.instance.TravarCursor();
         StartCoroutine(ResumeRoutine());
     }
 
