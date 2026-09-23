@@ -93108,6 +93108,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 3150687233549385143, guid: f2a5fae456096a94b859d98978f54d02, type: 3}
+      propertyPath: CameraRadius
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150687233549385143, guid: f2a5fae456096a94b859d98978f54d02, type: 3}
+      propertyPath: TerrainResolution.Damping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150687233549385143, guid: f2a5fae456096a94b859d98978f54d02, type: 3}
+      propertyPath: TerrainResolution.Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6267295965763521096, guid: f2a5fae456096a94b859d98978f54d02, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.9849303
@@ -93124,6 +93136,10 @@ PrefabInstance:
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 1493467433}
+    - target: {fileID: 7468745193605801098, guid: f2a5fae456096a94b859d98978f54d02, type: 3}
+      propertyPath: field of view
+      value: 47.621666
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

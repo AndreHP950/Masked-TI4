@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 7794321447050751398}
   - component: {fileID: 9209747710911055958}
   - component: {fileID: 3150687233549385143}
+  - component: {fileID: 7700182242337485290}
   m_Layer: 0
   m_Name: FreeLook Camera
   m_TagString: Untagged
@@ -306,13 +307,13 @@ MonoBehaviour:
   Radius: 5
   Orbits:
     Top:
-      Radius: 2.24
-      Height: 1.27
+      Radius: 2.1
+      Height: 1.01
     Center:
-      Radius: 2.79
-      Height: 0.91
+      Radius: 2.19
+      Height: 0.51
     Bottom:
-      Radius: 2.5
+      Radius: 1.8
       Height: 0.1
     SplineCurvature: 0.5
   RecenteringTarget: 2
@@ -462,21 +463,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca7de3aefa901374ba29464584a3109a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineDecollider
-  CameraRadius: 0.4
+  CameraRadius: 10
   Decollision:
-    Enabled: 0
+    Enabled: 1
     ObstacleLayers:
       serializedVersion: 2
-      m_Bits: 1
+      m_Bits: 4294967295
     UseFollowTarget:
       Enabled: 0
       YOffset: 0
-    Damping: 0.5
-    SmoothingTime: 0
+    Damping: 0
+    SmoothingTime: 0.2
   TerrainResolution:
-    Enabled: 1
+    Enabled: 0
     TerrainLayers:
       serializedVersion: 2
       m_Bits: 1
     MaximumRaycast: 10
     Damping: 0.5
+--- !u!114 &7700182242337485290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5983377851997582611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4700f9f03ad19f94baf0367cb7a9c988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollowZoom
+  Width: 2
+  Damping: 1
+  FovRange: {x: 15, y: 60}
