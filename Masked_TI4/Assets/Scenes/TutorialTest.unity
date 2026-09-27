@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &86654624 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7392321256887219899, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
+  m_PrefabInstance: {fileID: 1865958875}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
 --- !u!1001 &163932302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -731,7 +742,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 9.8651e-41, y: 0, z: 0, w: 1.5425e-41}
+  m_BoundingSphereOverride: {x: 3991.2756, y: 1.8058762e+28, z: 873190.3, w: 4.4376848e+27}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -784,6 +795,37 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &1452612204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1452612205}
+  m_Layer: 0
+  m_Name: Respawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1452612205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452612204}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 10.23, z: -51.91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1457754502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1045,6 +1087,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4524908376607393192, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
+      propertyPath: pontoRespawn
+      value: 
+      objectReference: {fileID: 1452612205}
+    - target: {fileID: 5603669324750339014, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 86654624}
+    - target: {fileID: 7392321256887219899, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 4493894806977003897}
+    - target: {fileID: 7885482654728952762, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
+      propertyPath: m_Height
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885482654728952762, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
+      propertyPath: m_Center.y
+      value: 0.08
+      objectReference: {fileID: 0}
     - target: {fileID: 8982508185336630689, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1130,6 +1192,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 3150687233549385143, guid: f2a5fae456096a94b859d98978f54d02, type: 3}
+      propertyPath: CameraRadius
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150687233549385143, guid: f2a5fae456096a94b859d98978f54d02, type: 3}
+      propertyPath: Decollision.Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6267295965763521096, guid: f2a5fae456096a94b859d98978f54d02, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.39999962
@@ -1160,13 +1230,18 @@ PrefabInstance:
       objectReference: {fileID: 894309621}
     - target: {fileID: 7468745193605801098, guid: f2a5fae456096a94b859d98978f54d02, type: 3}
       propertyPath: field of view
-      value: 47.95149
+      value: 48.144825
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2a5fae456096a94b859d98978f54d02, type: 3}
+--- !u!20 &4493894806977003897 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7468745193605801098, guid: f2a5fae456096a94b859d98978f54d02, type: 3}
+  m_PrefabInstance: {fileID: 4493894806977003896}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1180,3 +1255,4 @@ SceneRoots:
   - {fileID: 596048552}
   - {fileID: 169360039}
   - {fileID: 163932302}
+  - {fileID: 1452612205}

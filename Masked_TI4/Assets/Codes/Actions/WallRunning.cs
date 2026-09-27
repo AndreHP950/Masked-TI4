@@ -1,49 +1,59 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WallRunning : MonoBehaviour
 {
-    
+    [Header("Wall Detection")]
     public LayerMask whatIsWall;
     public LayerMask whatIsGround;
-    public float wallRunForce;
-    public float wallClimbSpeed;
-    public float maxWallRunTime;
-    private float wallRunTimer;
 
-    public KeyCode upwardsRunKey = KeyCode.LeftShift;
-    public KeyCode downwardsRunKey = KeyCode.LeftControl;
-    private bool upwardsRunning;
-    private bool downwardsRunning;
-    private float horizontalInput;
-    private float verticalInput;
+    public float wallCheckDistance = 1f;
+    public float minJumpHeight = 1f;
 
-   
-    public float wallCheckDistance;
-    public float minJumpHeight;
     private RaycastHit leftWallhit;
     private RaycastHit rightWallhit;
+
     private bool wallLeft;
     private bool wallRight;
 
+    [Header("Wall Running")]
+    public float wallRunForce = 10f;
+    public float wallClimbSpeed = 5f;
+    public float maxWallRunTime = 3f;
+
+    private float wallRunTimer;
+
+    [Header("Wall Running Keys")]
+    public KeyCode upwardsRunKey = KeyCode.LeftShift;
+    public KeyCode downwardsRunKey = KeyCode.LeftControl;
+
+    private bool upwardsRunning;
+    private bool downwardsRunning;
+
+    private float horizontalInput;
+    private float verticalInput;
+
+    [Header("Wall Exit")]
+    public float exitWallTime = 0.2f;
+
     private bool exitingWall;
-    public float exitWallTime;
     private float exitWallTimer;
 
-    public float wallJumpUpForce;
-    public float wallJumpSideForce;
+    [Header("Wall Jump")]
+    public float wallJumpUpForce = 8f;
+    public float wallJumpSideForce = 8f;
+
     public KeyCode jumpKey = KeyCode.Space;
 
-
+    [Header("References")]
     public Transform orientation;
-    private PlayerRB pm;
-    private Rigidbody rb;
+
+    private TestePlayerCC pm;
+    private CharacterController controller;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        pm = GetComponent<PlayerRB>();
+        controller = GetComponent<CharacterController>();
+        pm = GetComponent<TestePlayerCC>();
     }
 
     private void Update()
@@ -57,21 +67,33 @@ public class WallRunning : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        if (pm.wallrunning)
-            WallRunningMovement();
-    }
-
     private void CheckForWall()
     {
-        wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallhit, wallCheckDistance, whatIsWall);
-        wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallhit, wallCheckDistance, whatIsWall);
+        wallRight = Physics.Raycast(
+            transform.position,
+            orientation.right,
+            out rightWallhit,
+            wallCheckDistance,
+            whatIsWall
+        );
+
+        wallLeft = Physics.Raycast(
+            transform.position,
+            -orientation.right,
+            out leftWallhit,
+            wallCheckDistance,
+            whatIsWall
+        );
     }
 
     private bool AboveGround()
     {
-        return !Physics.Raycast(transform.position, Vector3.down, minJumpHeight, whatIsGround);
+        return !Physics.Raycast(
+            transform.position,
+            Vector3.down,
+            minJumpHeight,
+            whatIsGround
+        );
     }
 
     private void StateMachine()
@@ -112,6 +134,11 @@ public class WallRunning : MonoBehaviour
             if (pm.wallrunning)
                 StopWallRun();
         }
+
+        if (pm.wallrunning)
+        {
+            WallRunningMovement();
+        }
     }
 
     private void StartWallRun()
@@ -122,34 +149,46 @@ public class WallRunning : MonoBehaviour
 
     private void WallRunningMovement()
     {
-        rb.useGravity = false;
-        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-
         Vector3 wallNormal = wallRight ? rightWallhit.normal : leftWallhit.normal;
 
-        Vector3 wallForward = Vector3.Cross(wallNormal, transform.up);
+        // Direction along the wall
+        Vector3 wallForward = Vector3.Cross(wallNormal,Vector3.up);
 
-        if ((orientation.forward - wallForward).magnitude > (orientation.forward - -wallForward).magnitude)
+        // Make wall direction match player's facing direction
+        if (Vector3.Dot( orientation.forward, wallForward) < 0f)
+        {
             wallForward = -wallForward;
+        }
 
-        
-        rb.AddForce(wallForward * wallRunForce, ForceMode.Force);
+        // Horizontal wall movement
+        Vector3 movement = wallForward * wallRunForce;
 
-        
+        // Climbing / descending
+        float verticalMovement = 0f;
+
         if (upwardsRunning)
-            rb.linearVelocity        = new Vector3(rb.linearVelocity.x, wallClimbSpeed, rb.linearVelocity.z);
-        if (downwardsRunning)
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, -wallClimbSpeed, rb.linearVelocity.z);
+        {
+            verticalMovement = wallClimbSpeed;
+        }
+        else if (downwardsRunning)
+        {
+            verticalMovement = -wallClimbSpeed;
+        }
 
-       
-        if (!(wallLeft && horizontalInput > 0) && !(wallRight && horizontalInput < 0))
-            rb.AddForce(-wallNormal * 100, ForceMode.Force);
+        movement.y = verticalMovement;
+
+        // Keep player attached to the wall
+        if (!(wallLeft && horizontalInput > 0) &&!(wallRight && horizontalInput < 0))
+        {
+            movement += -wallNormal * wallRunForce;
+        }
+
+        controller.Move(movement * Time.deltaTime);
     }
 
     private void StopWallRun()
     {
         pm.wallrunning = false;
-        rb.useGravity = true;
     }
 
     private void WallJump()
@@ -157,10 +196,16 @@ public class WallRunning : MonoBehaviour
         exitingWall = true;
         exitWallTimer = exitWallTime;
 
-        Vector3 wallNormal = wallRight ? rightWallhit.normal : leftWallhit.normal;
-        Vector3 forceToApply = transform.up * wallJumpUpForce + wallNormal * wallJumpSideForce;
+        Vector3 wallNormal = wallRight? rightWallhit.normal : leftWallhit.normal;
 
-        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-        rb.AddForce(forceToApply, ForceMode.Impulse);
+        Vector3 horizontalJump = wallNormal * wallJumpSideForce;
+
+        // Vertical part is handled by TestePlayerCC
+        pm.SetVerticalVelocity(wallJumpUpForce);
+
+        // Move sideways
+        controller.Move(horizontalJump * Time.deltaTime);
+
+        StopWallRun();
     }
 }

@@ -94,22 +94,22 @@ public class AudioManager : MonoBehaviour
      */
     public void SetMasterVolume()
     {
-        mixer.SetFloat("Master", Mathf.Log10(masterSlider.value) * 20);
-        PlayerPrefs.SetFloat("masterVolume", masterSlider.value);
-        PlayerPrefs.Save();
+        //mixer.SetFloat("Master", Mathf.Log10(masterSlider.value) * 20);
+        //PlayerPrefs.SetFloat("masterVolume", masterSlider.value);
+        //PlayerPrefs.Save();
     }
     public void SetMusicVolume()
     {
-        mixer.SetFloat("Music", Mathf.Log10(musicSlider.value) * 20);
-        PlayerPrefs.SetFloat("musicVolume", musicSlider.value);
-        PlayerPrefs.Save();
+        //mixer.SetFloat("Music", Mathf.Log10(musicSlider.value) * 20);
+       // PlayerPrefs.SetFloat("musicVolume", musicSlider.value);
+       // PlayerPrefs.Save();
     }
 
     public void SetSFXVolume()
     {
-        mixer.SetFloat("SFX", Mathf.Log10(sfxSlider.value) * 20);
-        PlayerPrefs.SetFloat("SFXVolume", sfxSlider.value);
-        PlayerPrefs.Save();
+        //mixer.SetFloat("SFX", Mathf.Log10(sfxSlider.value) * 20);
+       // PlayerPrefs.SetFloat("SFXVolume", sfxSlider.value);
+       // PlayerPrefs.Save();
     }
 
     /*

@@ -495,4 +495,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollowZoom
   Width: 2
   Damping: 1
-  FovRange: {x: 15, y: 60}
+  FovRange: {x: 48.144825, y: 93.14482}

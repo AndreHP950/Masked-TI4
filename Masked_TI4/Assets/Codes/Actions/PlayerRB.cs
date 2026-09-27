@@ -138,3 +138,4 @@ public class PlayerRB : MonoBehaviour
         }
     }
 }
+//Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
