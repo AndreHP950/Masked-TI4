@@ -187,6 +187,72 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1531419c5fdbd048b95e7f75457f6f7, type: 3}
+--- !u!1 &164498581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 164498583}
+  - component: {fileID: 164498582}
+  - component: {fileID: 164498584}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &164498582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164498581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: ab09877e2e707104187f6f83e2f62510, type: 2}
+--- !u!4 &164498583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164498581}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.32059, y: 11.638315, z: -45.737198}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &164498584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164498581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c813343ca3dc440b8114bd4507f5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimePeriodManager
+  _globalVolume: {fileID: 164498582}
+  _passadoProfile: {fileID: 11400000, guid: d903b89aa30d1694bbc8773d19ead3c6, type: 2}
+  _futuroProfile: {fileID: 11400000, guid: 9627c266549197a49a1c07489df3c9bc, type: 2}
+  _transitionDuration: 0.5
 --- !u!1 &169360037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,6 +1266,10 @@ PrefabInstance:
       propertyPath: Decollision.Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4714532930729639403, guid: f2a5fae456096a94b859d98978f54d02, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6267295965763521096, guid: f2a5fae456096a94b859d98978f54d02, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.39999962
@@ -1256,3 +1326,4 @@ SceneRoots:
   - {fileID: 169360039}
   - {fileID: 163932302}
   - {fileID: 1452612205}
+  - {fileID: 164498583}
