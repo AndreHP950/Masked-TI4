@@ -7,11 +7,9 @@ public class TestePlayerCC : MonoBehaviour
     [Header("Movement")]
     public float speed = 6f;
     public float sprintSpeed = 12f;
-
     public float acceleration = 20f;
     public float sprintAcceleration = 25f;
     public float deceleration = 30f;
-
     public float rotationSpeed = 10f;
 
     private float currentSpeed;
@@ -53,17 +51,15 @@ public class TestePlayerCC : MonoBehaviour
         playerInput.ActivateInput();
         playerInput.SwitchCurrentActionMap("Player");
 
-        if(SceneManager.GetActiveScene().buildIndex != 0)
+        if (SceneManager.GetActiveScene().buildIndex != 0)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
-       
     }
 
     private void Update()
     {
-        
         if (wallrunning) return;
 
         // =====================================
@@ -73,33 +69,20 @@ public class TestePlayerCC : MonoBehaviour
         if (controller.isGrounded)
         {
             Floored = true;
+            coyoteTimer = coyoteTime;
 
-            
-            coyoteTimer = coyoteTime;//RESET COYOTE
-
-            
             if (verticalVelocity < 0f)
-            {
                 verticalVelocity = -2f;
-            }
         }
         else
         {
             Floored = false;
-
-           
             coyoteTimer -= Time.deltaTime;
 
-            
             if (verticalVelocity > 0f)
-            {
                 verticalVelocity += upGravity * Time.deltaTime;
-            }
-           
             else
-            {
                 verticalVelocity += downGravity * Time.deltaTime;
-            }
         }
 
         // =====================================
@@ -109,7 +92,6 @@ public class TestePlayerCC : MonoBehaviour
         Vector3 forward = Camera.main.transform.forward;
         Vector3 right = Camera.main.transform.right;
 
-        
         forward.y = 0f;
         right.y = 0f;
 
@@ -118,30 +100,32 @@ public class TestePlayerCC : MonoBehaviour
 
         Vector3 direction = right * x + forward * z;
 
-        
         if (direction.sqrMagnitude > 1f)
-        {
             direction.Normalize();
-        }
 
         // =====================================
         // ACCELERATION / DECELERATION
         // =====================================
 
-        float targetSpeed = direction.magnitude *
-                            (sprinting ? sprintSpeed : speed);
+        float targetSpeed = direction.magnitude * (sprinting ? sprintSpeed : speed);
 
         if (direction.sqrMagnitude > 0.001f)
         {
-            
             float accelerationRate = sprinting ? sprintAcceleration : acceleration;
 
-            currentSpeed = Mathf.MoveTowards( currentSpeed,targetSpeed,  accelerationRate * Time.deltaTime );
+            currentSpeed = Mathf.MoveTowards(
+                currentSpeed,
+                targetSpeed,
+                accelerationRate * Time.deltaTime
+            );
         }
         else
         {
-            
-            currentSpeed = Mathf.MoveTowards( currentSpeed, 0f, deceleration * Time.deltaTime );
+            currentSpeed = Mathf.MoveTowards(
+                currentSpeed,
+                0f,
+                deceleration * Time.deltaTime
+            );
         }
 
         // =====================================
@@ -149,24 +133,27 @@ public class TestePlayerCC : MonoBehaviour
         // =====================================
 
         Vector3 movement = direction.normalized * currentSpeed;
-
-        
         movement.y = verticalVelocity;
 
         controller.Move(movement * Time.deltaTime);
 
         // =====================================
-        // CHARACTER ROTATION
+        // STRAFE ROTATION
         // =====================================
 
-        if (direction.sqrMagnitude > 0.001f)
+        Vector3 cameraForward = Camera.main.transform.forward;
+        cameraForward.y = 0f;
+        cameraForward.Normalize();
+
+        if (cameraForward.sqrMagnitude > 0.001f)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            Quaternion targetRotation = Quaternion.LookRotation(cameraForward);
 
-           
-            targetRotation = Quaternion.Euler( 0f, targetRotation.eulerAngles.y, 0f );
-
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                targetRotation,
+                rotationSpeed * Time.deltaTime
+            );
         }
     }
 
@@ -197,12 +184,10 @@ public class TestePlayerCC : MonoBehaviour
         if (!context.performed)
             return;
 
-        
-        if (coyoteTimer <= 0f) return;
+        if (coyoteTimer <= 0f)
+            return;
 
         verticalVelocity = jumpforce;
-
-        
         coyoteTimer = 0f;
 
         AudioManager.instance.PlaySFX(1);
@@ -215,14 +200,10 @@ public class TestePlayerCC : MonoBehaviour
     public void Sprint(InputAction.CallbackContext context)
     {
         if (context.started)
-        {
             sprinting = true;
-        }
 
         if (context.canceled)
-        {
             sprinting = false;
-        }
     }
 
     // =========================================
@@ -247,7 +228,8 @@ public class TestePlayerCC : MonoBehaviour
     // =========================================
     // TRIGGER
     // =========================================
-    private void OnTriggerEnter(Collider other) // Para teste de audio. Pode remover depois se for o caso
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Coin")
         {
@@ -255,8 +237,4 @@ public class TestePlayerCC : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-
-
-
-        
 }
