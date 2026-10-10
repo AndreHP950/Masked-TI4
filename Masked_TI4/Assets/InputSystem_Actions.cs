@@ -141,7 +141,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""f1ba0d36-48eb-4cd5-b651-1c94a6531f70"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -169,6 +169,33 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""type"": ""Button"",
                     ""id"": ""641cd816-40e6-41b4-8c3d-04687c349290"",
                     ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ClimbEdge"",
+                    ""type"": ""Button"",
+                    ""id"": ""dbbd50cf-9382-44c3-b75f-350368183819"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UpWallRide"",
+                    ""type"": ""Button"",
+                    ""id"": ""136b0b75-de92-46b8-98be-3b4b476ffcd4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DownWallRide"",
+                    ""type"": ""Button"",
+                    ""id"": ""912634ef-1c14-4afe-948a-b85434ebb4d5"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -557,6 +584,39 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""903d4865-677d-460f-b45c-7835411a4a0e"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClimbEdge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12716340-8452-4b5a-a959-5f71c7aa9fbc"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UpWallRide"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""54c0d52d-ac65-42b3-bcd1-ae61c4ef5be3"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DownWallRide"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1153,6 +1213,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Previous = m_Player.FindAction("Previous", throwIfNotFound: true);
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
+        m_Player_ClimbEdge = m_Player.FindAction("ClimbEdge", throwIfNotFound: true);
+        m_Player_UpWallRide = m_Player.FindAction("UpWallRide", throwIfNotFound: true);
+        m_Player_DownWallRide = m_Player.FindAction("DownWallRide", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1255,6 +1318,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Previous;
     private readonly InputAction m_Player_Next;
     private readonly InputAction m_Player_Sprint;
+    private readonly InputAction m_Player_ClimbEdge;
+    private readonly InputAction m_Player_UpWallRide;
+    private readonly InputAction m_Player_DownWallRide;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1302,6 +1368,18 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Sprint".
         /// </summary>
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ClimbEdge".
+        /// </summary>
+        public InputAction @ClimbEdge => m_Wrapper.m_Player_ClimbEdge;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/UpWallRide".
+        /// </summary>
+        public InputAction @UpWallRide => m_Wrapper.m_Player_UpWallRide;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/DownWallRide".
+        /// </summary>
+        public InputAction @DownWallRide => m_Wrapper.m_Player_DownWallRide;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1355,6 +1433,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
+            @ClimbEdge.started += instance.OnClimbEdge;
+            @ClimbEdge.performed += instance.OnClimbEdge;
+            @ClimbEdge.canceled += instance.OnClimbEdge;
+            @UpWallRide.started += instance.OnUpWallRide;
+            @UpWallRide.performed += instance.OnUpWallRide;
+            @UpWallRide.canceled += instance.OnUpWallRide;
+            @DownWallRide.started += instance.OnDownWallRide;
+            @DownWallRide.performed += instance.OnDownWallRide;
+            @DownWallRide.canceled += instance.OnDownWallRide;
         }
 
         /// <summary>
@@ -1393,6 +1480,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
+            @ClimbEdge.started -= instance.OnClimbEdge;
+            @ClimbEdge.performed -= instance.OnClimbEdge;
+            @ClimbEdge.canceled -= instance.OnClimbEdge;
+            @UpWallRide.started -= instance.OnUpWallRide;
+            @UpWallRide.performed -= instance.OnUpWallRide;
+            @UpWallRide.canceled -= instance.OnUpWallRide;
+            @DownWallRide.started -= instance.OnDownWallRide;
+            @DownWallRide.performed -= instance.OnDownWallRide;
+            @DownWallRide.canceled -= instance.OnDownWallRide;
         }
 
         /// <summary>
@@ -1756,6 +1852,27 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSprint(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ClimbEdge" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnClimbEdge(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "UpWallRide" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnUpWallRide(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "DownWallRide" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDownWallRide(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

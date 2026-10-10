@@ -17,6 +17,9 @@ public class TestePlayerCC : MonoBehaviour
 
     [Header("Jump")]
     public float jumpforce = 8f;
+    public int maxJumps = 2;
+
+    private int jumpsRemaining;
 
     [Header("Gravity")]
     public float upGravity = -15f;
@@ -62,6 +65,13 @@ public class TestePlayerCC : MonoBehaviour
     {
         if (wallrunning) return;
 
+        LedgeGrab ledge = GetComponent<LedgeGrab>();//lucas lima
+
+        if (ledge != null && ledge.IsGrabbing)
+        {
+            verticalVelocity = 0f;
+            return;
+        }
         // =====================================
         // GROUND / GRAVITY
         // =====================================
@@ -70,6 +80,9 @@ public class TestePlayerCC : MonoBehaviour
         {
             Floored = true;
             coyoteTimer = coyoteTime;
+            AnimationController.instance.anim.SetBool("Jump",false);
+
+            jumpsRemaining = maxJumps;
 
             if (verticalVelocity < 0f)
                 verticalVelocity = -2f;
@@ -113,19 +126,11 @@ public class TestePlayerCC : MonoBehaviour
         {
             float accelerationRate = sprinting ? sprintAcceleration : acceleration;
 
-            currentSpeed = Mathf.MoveTowards(
-                currentSpeed,
-                targetSpeed,
-                accelerationRate * Time.deltaTime
-            );
+            currentSpeed = Mathf.MoveTowards(currentSpeed,targetSpeed,accelerationRate * Time.deltaTime);
         }
         else
         {
-            currentSpeed = Mathf.MoveTowards(
-                currentSpeed,
-                0f,
-                deceleration * Time.deltaTime
-            );
+            currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, deceleration * Time.deltaTime);
         }
 
         // =====================================
@@ -149,11 +154,7 @@ public class TestePlayerCC : MonoBehaviour
         {
             Quaternion targetRotation = Quaternion.LookRotation(cameraForward);
 
-            transform.rotation = Quaternion.Slerp(
-                transform.rotation,
-                targetRotation,
-                rotationSpeed * Time.deltaTime
-            );
+            transform.rotation = Quaternion.Slerp( transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
     }
 
@@ -167,30 +168,44 @@ public class TestePlayerCC : MonoBehaviour
 
         x = input.x;
         z = input.y;
-
+        AnimationController.instance.anim.SetInteger("WalkingSpeed", 1);
         if (context.canceled)
         {
+            AnimationController.instance.anim.SetInteger("WalkingSpeed", 0);
             x = 0f;
             z = 0f;
         }
     }
 
     // =========================================
-    // JUMP INPUT
+    // JUMP INPUT - DOUBLE JUMP
     // =========================================
 
     public void Jump(InputAction.CallbackContext context)
     {
+        AnimationController.instance.anim.SetBool("Jump", true);
         if (!context.performed)
             return;
 
-        if (coyoteTimer <= 0f)
+        // First jump
+        if (jumpsRemaining == maxJumps && (controller.isGrounded || coyoteTimer > 0f))
+        {
+            verticalVelocity = jumpforce;
+            jumpsRemaining--;
+            coyoteTimer = 0f;
+
+            AudioManager.instance.PlaySFX(1);
             return;
+        }
 
-        verticalVelocity = jumpforce;
-        coyoteTimer = 0f;
-
-        AudioManager.instance.PlaySFX(1);
+        // Second jump
+        if (jumpsRemaining > 0)
+        {
+            verticalVelocity = jumpforce;
+            jumpsRemaining--;
+           
+            AudioManager.instance.PlaySFX(1);
+        }
     }
 
     // =========================================
