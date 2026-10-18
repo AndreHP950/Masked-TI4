@@ -80,7 +80,7 @@ public class TestePlayerCC : MonoBehaviour
         {
             Floored = true;
             coyoteTimer = coyoteTime;
-            AnimationController.instance.anim.SetBool("Jump",false);
+            //AnimationController.instance.anim.SetBool("Jump",false);
 
             jumpsRemaining = maxJumps;
 
@@ -168,10 +168,10 @@ public class TestePlayerCC : MonoBehaviour
 
         x = input.x;
         z = input.y;
-        AnimationController.instance.anim.SetInteger("WalkingSpeed", 1);
+        //AnimationController.instance.anim.SetInteger("WalkingSpeed", 1);
         if (context.canceled)
         {
-            AnimationController.instance.anim.SetInteger("WalkingSpeed", 0);
+            //AnimationController.instance.anim.SetInteger("WalkingSpeed", 0);
             x = 0f;
             z = 0f;
         }
@@ -183,7 +183,7 @@ public class TestePlayerCC : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        AnimationController.instance.anim.SetBool("Jump", true);
+        //AnimationController.instance.anim.SetBool("Jump", true);
         if (!context.performed)
             return;
 
