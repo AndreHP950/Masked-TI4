@@ -61,8 +61,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5779061313492781080}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15699036, y: -0.000000021931822, z: 0.0000000034863148, w: 0.98760015}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.114150055, y: -2.576259e-16, z: 2.9601495e-17, w: 0.9934635}
+  m_LocalPosition: {x: -3.9849303, y: 2.296, z: 0.39486003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -101,7 +101,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 56
+  field of view: 48.14483
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 9209747710911055958}
   - component: {fileID: 3150687233549385143}
   - component: {fileID: 7700182242337485290}
+  - component: {fileID: 6708783584201260252}
   m_Layer: 0
   m_Name: FreeLook Camera
   m_TagString: Untagged
@@ -234,8 +235,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5983377851997582611}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15699035, y: -0.000000021931818, z: 0.000000003486314, w: 0.98760015}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.11415005, y: -3.0966786e-16, z: 4.8253005e-16, w: 0.9934635}
+  m_LocalPosition: {x: -3.9849303, y: 2.296, z: 0.39486003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -463,12 +464,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca7de3aefa901374ba29464584a3109a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineDecollider
-  CameraRadius: 10
+  CameraRadius: 0.01
   Decollision:
     Enabled: 1
     ObstacleLayers:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 128
     UseFollowTarget:
       Enabled: 0
       YOffset: 0
@@ -480,7 +481,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 1
     MaximumRaycast: 10
-    Damping: 0.5
+    Damping: 0
 --- !u!114 &7700182242337485290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,3 +497,42 @@ MonoBehaviour:
   Width: 2
   Damping: 1
   FovRange: {x: 48.144825, y: 93.14482}
+--- !u!114 &6708783584201260252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5983377851997582611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe43d662878a7c43bcd44d43c9e2094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineDeoccluder
+  CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 127
+  IgnoreTag: Player
+  TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  MinimumDistanceFromTarget: 0.3
+  AvoidObstacles:
+    Enabled: 1
+    DistanceLimit: 0
+    MinimumOcclusionTime: 0
+    CameraRadius: 0.4
+    UseFollowTarget:
+      Enabled: 0
+      YOffset: 0
+    Strategy: 0
+    MaximumEffort: 4
+    SmoothingTime: 0
+    Damping: 0.4
+    DampingWhenOccluded: 0.2
+  ShotQualityEvaluation:
+    Enabled: 1
+    OptimalDistance: 10
+    NearLimit: 5
+    FarLimit: 30
+    MaxQualityBoost: 0.2
