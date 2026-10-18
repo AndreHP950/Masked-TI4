@@ -168,10 +168,10 @@ public class TestePlayerCC : MonoBehaviour
 
         x = input.x;
         z = input.y;
-        //AnimationController.instance.anim.SetInteger("WalkingSpeed", 1);
+        AnimationController.instance.anim.SetInteger("WalkingSpeed", 1);
         if (context.canceled)
         {
-            //AnimationController.instance.anim.SetInteger("WalkingSpeed", 0);
+            AnimationController.instance.anim.SetInteger("WalkingSpeed", 0);
             x = 0f;
             z = 0f;
         }
