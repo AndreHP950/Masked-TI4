@@ -5,7 +5,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 40px;
-    background-image: url("project://database/Assets/Textures/MaskedBackground.png?fileID=21300000&guid=42d8ed35686f99c4b8ad08d607492a75&type=3#MaskedBackground");
+    background-image: url("project://database/Assets/Art/2D/Textures/MaskedBackground.png?fileID=21300000&guid=42d8ed35686f99c4b8ad08d607492a75&type=3#MaskedBackground");
     -unity-background-scale-mode: scale-to-fit;
     -unity-background-image-tint-color: rgba(255, 255, 255, 0.59);
 }
@@ -48,7 +48,7 @@
     font-size: 20px;
     letter-spacing: 6px;
     -unity-text-align: middle-center;
-    -unity-font-definition: url("project://database/Assets/Fonts/Agdasima-Bold.ttf?fileID=12800000&guid=9181bb81034468a409821c56beddcf11&type=3#Agdasima-Bold");
+    -unity-font-definition: url("project://database/Assets/Art/2D/Fonts/Agdasima-Bold.ttf?fileID=12800000&guid=9181bb81034468a409821c56beddcf11&type=3#Agdasima-Bold");
 }
 
 .prompt-text {
@@ -90,6 +90,6 @@
     right: 30px;
     width: 220px;
     height: 80px;
-    background-image: url("project://database/Assets/Textures/PucLogo.png?fileID=2800000&guid=d65c9e0f62083ca46a1e18f808cc9933&type=3#PucLogo");
+    background-image: url("project://database/Assets/Art/2D/Textures/PucLogo.png?fileID=2800000&guid=d65c9e0f62083ca46a1e18f808cc9933&type=3#PucLogo");
     -unity-background-scale-mode: stretch-to-fill;
 }
