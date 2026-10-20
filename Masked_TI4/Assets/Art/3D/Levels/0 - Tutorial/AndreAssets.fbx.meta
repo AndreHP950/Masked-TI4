@@ -3,7 +3,152 @@ guid: e5ca1141ad853594baf7376213352a36
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AmareloEmissivo
+    second: {fileID: 2100000, guid: 3dc40844a7589234caa9286f437d3446, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AzulEmissivo
+    second: {fileID: 2100000, guid: 6a8f04c1d37ab6042a225df0b9083244, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AzulEmissivo.001
+    second: {fileID: 2100000, guid: afe82cb8856deee408cd59494c536577, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChaoTex
+    second: {fileID: 2100000, guid: 469305ed6649c3e43ad5acb7034f5d00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CogumeloTex
+    second: {fileID: 2100000, guid: 57735b61a4c1fe54d9267b7415d0da5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Couro
+    second: {fileID: 2100000, guid: dbaac9e9e45522b4393f0fd78c895b0d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Couro.001
+    second: {fileID: 2100000, guid: 26593ecf127295b46ac5ccf7039c0e44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cristal
+    second: {fileID: 2100000, guid: 2aa790a8d43077443bf08de497e6f9b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EngrenagemTex
+    second: {fileID: 2100000, guid: b730df4398ec69249ba77a7ce4ef93c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Folha
+    second: {fileID: 2100000, guid: 49a27fb25200e8147a08406a88dd42b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Folha.002
+    second: {fileID: 2100000, guid: 3827cbb958033b5439137635b41f6301, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ForkLift_Truck
+    second: {fileID: 2100000, guid: 659da9430abf5d24197da249ab19782a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madeira
+    second: {fileID: 2100000, guid: b2dc730f958354341a922efcf31f1bc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madeira.001
+    second: {fileID: 2100000, guid: ecaa4a1ef38a7a04892359186286917e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MadeiraBrilhosa
+    second: {fileID: 2100000, guid: ff84d5d6584eb144b8cfdf667eed810d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MadeiraBrilhosa.001
+    second: {fileID: 2100000, guid: 7a1078ee8c048134aa05c230d8887c5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalFosco
+    second: {fileID: 2100000, guid: 9ca6acbbbd70b7643a06a429efad6965, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalFosco.001
+    second: {fileID: 2100000, guid: 8785129bb4509c14aacae1ef0b2ad07c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Painting
+    second: {fileID: 2100000, guid: d529fc8104f34ee4cbae752941919b67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ParedeAltaTex
+    second: {fileID: 2100000, guid: a3e66ca63c499414fb20dfd52c38e788, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ParedeBaixaTex
+    second: {fileID: 2100000, guid: 8ee105cc64c47f24ebea644a924c8572, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ParedeDiagonalTex
+    second: {fileID: 2100000, guid: 99c2a8dff2ad57e4f91b7cea54671d43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pedra
+    second: {fileID: 2100000, guid: 70107550bc4c72f4299152bfa9ed25cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pedra.001
+    second: {fileID: 2100000, guid: 3f7bef14c1de7e94cb7aa519a618b2eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone.001
+    second: {fileID: 2100000, guid: 73f0bdb66a1dc03458855ab32ffaae1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VerdeEmissivo
+    second: {fileID: 2100000, guid: b4bbc5b7eedf05144ac4444dc7498308, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VermelhoEmissivo
+    second: {fileID: 2100000, guid: bc1473f8479caae41aeb08f5848cc452, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vidro
+    second: {fileID: 2100000, guid: 9f800ab836fced54d874da92ae9fffb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vidro.002
+    second: {fileID: 2100000, guid: 45c825371ff884a4b9ee4f40879ca6d4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
