@@ -85,7 +85,8 @@ public class TestePlayerCC : MonoBehaviour
         {
             Floored = true;
             coyoteTimer = coyoteTime;
-            //AnimationController.instance.anim.SetBool("Jump",false);
+            AnimationController.instance.anim.SetBool("Grounded", true);
+            AnimationController.instance.anim.SetBool("Jump", false);
 
             jumpsRemaining = maxJumps;
 
@@ -94,6 +95,8 @@ public class TestePlayerCC : MonoBehaviour
         }
         else
         {
+            
+            AnimationController.instance.anim.SetBool("Grounded", false);
             Floored = false;
             coyoteTimer -= Time.deltaTime;
 
@@ -188,7 +191,7 @@ public class TestePlayerCC : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-       
+        AnimationController.instance.anim.SetBool("Jump",true);
         if (!context.performed)
             return;
 
