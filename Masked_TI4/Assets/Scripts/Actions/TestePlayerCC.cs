@@ -43,6 +43,9 @@ public class TestePlayerCC : MonoBehaviour
 
     public PlayerInput playerInput;
 
+    float teste;
+
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -72,6 +75,8 @@ public class TestePlayerCC : MonoBehaviour
             verticalVelocity = 0f;
             return;
         }
+
+        UpdateAnim();
         // =====================================
         // GROUND / GRAVITY
         // =====================================
@@ -183,17 +188,18 @@ public class TestePlayerCC : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        //AnimationController.instance.anim.SetBool("Jump", true);
+       
         if (!context.performed)
             return;
 
         // First jump
         if (jumpsRemaining == maxJumps && (controller.isGrounded || coyoteTimer > 0f))
         {
+            //AnimationController.instance.anim.SetTrigger("Jump");
             verticalVelocity = jumpforce;
             jumpsRemaining--;
             coyoteTimer = 0f;
-
+            
             AudioManager.instance.PlaySFX(1);
             return;
         }
@@ -251,5 +257,20 @@ public class TestePlayerCC : MonoBehaviour
             AudioManager.instance.PlaySFX(2);
             Destroy(other.gameObject);
         }
+    }
+
+
+    public void UpdateAnim()
+    {
+        float target = 1f;
+
+        if (new Vector2(x, z).sqrMagnitude > 0.01f)
+        {
+            target = sprinting ? 2f : 1f;
+        }
+
+        teste = Mathf.MoveTowards(teste,target,1.5f * Time.deltaTime);
+        print(teste);
+        AnimationController.instance.anim.SetFloat("Run", teste);
     }
 }
