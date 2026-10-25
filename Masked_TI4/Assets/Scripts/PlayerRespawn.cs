@@ -6,6 +6,11 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private Transform pontoRespawn;
     public static PlayerRespawn instance;
 
+
+    private void Start()
+    {
+        instance = this;
+    }
     void Update()
     {
         if (transform.position.y <= limiteY)
