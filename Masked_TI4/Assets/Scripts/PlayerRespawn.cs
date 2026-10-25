@@ -3,7 +3,8 @@ using UnityEngine;
 public class PlayerRespawn : MonoBehaviour
 {
     [SerializeField] private float limiteY = -10f;
-    [SerializeField] private Transform pontoRespawn; 
+    [SerializeField] private Transform pontoRespawn;
+    public static PlayerRespawn instance;
 
     void Update()
     {
@@ -44,5 +45,11 @@ public class PlayerRespawn : MonoBehaviour
 
         if (cc != null)
             cc.enabled = true;
+    }
+
+
+    public void AtualizarRespawn(GameObject proximoRes)
+    {
+        pontoRespawn = proximoRes.transform;
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Coin
   - ProximoNivel
   - Tele
+  - Gas
   layers:
   - Default
   - TransparentFX
