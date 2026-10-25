@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 6b7aeccda44714f4cadea2b7496455cb, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 227428c034698e141854bea43352b17c, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 14071d88f2ae7f54a8855b6b74826be5, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -34993,6 +34993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
   Player: {fileID: 0}
+  data: {fileID: 11400000, guid: f288ae1f4751b564a96ac7587541f7a2, type: 2}
 --- !u!4 &596048552
 Transform:
   m_ObjectHideFlags: 0
@@ -135246,7 +135247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8793679900250655929, guid: 0889556bff3e79a4dbc25867edbdaee8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -214924,6 +214925,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5631602413071460245, guid: 4e395bd1e19f3944ab0422923d96ea3d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5663168948714684077, guid: 4e395bd1e19f3944ab0422923d96ea3d, type: 3}
       propertyPath: m_Name
       value: LuzBranca
@@ -222915,6 +222920,10 @@ PrefabInstance:
     - target: {fileID: 7205910843648442552, guid: 3c1c1fb847d02d740803cc2daa9d134c, type: 3}
       propertyPath: m_Intensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563394862867631331, guid: 3c1c1fb847d02d740803cc2daa9d134c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

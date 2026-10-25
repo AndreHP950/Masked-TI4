@@ -1,5 +1,7 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class TestePlayerCC : MonoBehaviour
@@ -266,7 +268,7 @@ public class TestePlayerCC : MonoBehaviour
     public void UpdateAnim()
     {
         float target = 1f;
-
+        FullScreenPassRendererFeature reder;
         if (new Vector2(x, z).sqrMagnitude > 0.01f)
         {
             target = sprinting ? 2f : 1f;
@@ -274,6 +276,9 @@ public class TestePlayerCC : MonoBehaviour
 
         teste = Mathf.MoveTowards(teste,target,1.5f * Time.deltaTime);
         print(teste);
+        FullscreenEffectController.instace.UpdateFullscreenEffect(teste, GameController.instance.Correr);
+
+
         AnimationController.instance.anim.SetFloat("Run", teste);
     }
 }

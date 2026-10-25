@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
     public GameObject Player;
-
+    public UniversalRendererData data;
+    public Material Correr;
     private void Awake()
     {
         

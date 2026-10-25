@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -13,58 +14,56 @@ public class GasZoneTrigger : MonoBehaviour
 
     private void Start()
     {
-        if (fullscreenGasMaterial != null)
-            fullscreenGasMaterial.SetFloat("_AlphaWeight", 0f);
-
-        if (fullscreenPassFeature != null)
-            fullscreenPassFeature.SetActive(false);
+        SetEffectAlpha(0f);
+        if (fullscreenPassFeature != null) fullscreenPassFeature.SetActive(false);
     }
 
     private void Update()
     {
         if (fullscreenGasMaterial == null) return;
 
-        if (Mathf.Abs(currentAlpha - targetAlpha) > 0.001f)
-        {
-            currentAlpha = Mathf.Lerp(currentAlpha, targetAlpha, Time.deltaTime * fadeSpeed);
-            fullscreenGasMaterial.SetFloat("_AlphaWeight", currentAlpha);
+        currentAlpha = Mathf.MoveTowards(currentAlpha, targetAlpha, fadeSpeed * Time.deltaTime);
+        SetEffectAlpha(currentAlpha);
 
-            if (targetAlpha == 0f && currentAlpha < 0.01f)
-            {
-                currentAlpha = 0f;
-                fullscreenGasMaterial.SetFloat("_AlphaWeight", 0f);
-
-                if (fullscreenPassFeature != null)
-                    fullscreenPassFeature.SetActive(false);
-            }
-        }
+        if (targetAlpha == 0f && currentAlpha <= 0f && fullscreenPassFeature != null)
+            fullscreenPassFeature.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("MainCamera"))
-        {
-            if (fullscreenPassFeature != null)
-                fullscreenPassFeature.SetActive(true);
+        if (!IsPlayer(other)) return;
 
-            targetAlpha = 1f;
-        }
+        targetAlpha = 1f;
+        if (fullscreenPassFeature != null) fullscreenPassFeature.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("MainCamera"))
-        {
-            targetAlpha = 0f;
-        }
+        if (!IsPlayer(other)) return;
+        targetAlpha = 0f;
+    }
+
+    public void ResetGasEffect()
+    {
+        targetAlpha = 0f;
+        currentAlpha = 0f;
+        SetEffectAlpha(0f);
+        if (fullscreenPassFeature != null) fullscreenPassFeature.SetActive(false);
+    }
+
+    private bool IsPlayer(Collider other)
+    {
+        return other.CompareTag("Player") || other.CompareTag("MainCamera");
+    }
+
+    private void SetEffectAlpha(float alpha)
+    {
+        if (fullscreenGasMaterial != null)
+            fullscreenGasMaterial.SetFloat("_AlphaWeight", alpha);
     }
 
     private void OnDisable()
     {
-        if (fullscreenGasMaterial != null)
-            fullscreenGasMaterial.SetFloat("_AlphaWeight", 0f);
-
-        if (fullscreenPassFeature != null)
-            fullscreenPassFeature.SetActive(false);
+        ResetGasEffect();
     }
 }
