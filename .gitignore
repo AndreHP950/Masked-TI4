@@ -104,3 +104,16 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# ==========================================
+# CUSTOMIZAÇÃO: Ignorar Lighting Data e Caches de Bake Pesados
+# ==========================================
+# Ignora arquivos de dados de iluminação gerados pelo Lightmapper e Adaptive Probe Volumes
+LightingData.asset
+LightingData.asset.meta
+*.lighting
+*.lighting.meta
+
+# Ignora pastas de lightmaps e dados gerados de iluminação por cena (geralmente ficam na mesma pasta da cena)
+/[Aa]ssets/**/*.lighting
+/[Aa]ssets/**/LightingData*.asset
