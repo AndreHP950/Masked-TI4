@@ -37,7 +37,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _SpeedLinesIntensity: 1
+    - _Speed: -0.06
+    - _SpeedLinesIntensity: 0
     m_Colors:
     - _LineColor: {r: 2, g: 2, b: 2, a: 1}
   m_BuildTextureStacks: []

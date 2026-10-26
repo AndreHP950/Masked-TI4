@@ -17197,6 +17197,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerTraps
   tempoParaMorrer: 2
+--- !u!114 &799130323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799130305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1476a38b465ebe4ead7eb7f4c434f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpeedLinesController
+  speedLinesMaterial: {fileID: 2100000, guid: 42453342351f6f441be24d9194e24a53, type: 2}
 --- !u!1 &820252625
 GameObject:
   m_ObjectHideFlags: 0
@@ -37664,6 +37677,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5603669324750339014, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
+      propertyPath: speedLines
+      value: 
+      objectReference: {fileID: 799130323}
+    - target: {fileID: 5603669324750339014, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
       propertyPath: playerInput
       value: 
       objectReference: {fileID: 86654624}
@@ -37690,6 +37707,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8982508185336630689, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 799130314}
+    - targetCorrespondingSourceObject: {fileID: 8982508185336630689, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 799130323}
   m_SourcePrefab: {fileID: 100100000, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
 --- !u!43 &1876595508
 Mesh:
