@@ -7,6 +7,8 @@ public class GameController : MonoBehaviour
     public GameObject Player;
     public UniversalRendererData data;
     public Material Correr;
+    public PlayerMudarTempo timeControl;
+
     private void Awake()
     {
         
@@ -46,5 +48,15 @@ public class GameController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    public void disableTravel()
+    {
+       timeControl.canSwapTime = false;
+    }
+
+    public void enableTravel()
+    {
+        timeControl.canSwapTime = true;
     }
 }
