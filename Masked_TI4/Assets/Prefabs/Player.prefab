@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1aee43c94f30ba408af96cb59e9fd19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMudarTempo
+  canSwapTime: 1
 --- !u!114 &4373852358972404070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,7 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestePlayerCC
   speed: 5
-  sprintSpeed: 12
+  sprintSpeed: 8
   acceleration: 15
   sprintAcceleration: 15
   deceleration: 25

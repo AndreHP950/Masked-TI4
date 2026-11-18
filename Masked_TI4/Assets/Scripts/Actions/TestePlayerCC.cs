@@ -285,7 +285,7 @@ public class TestePlayerCC : MonoBehaviour
 
         teste = Mathf.MoveTowards(teste,target,1.5f * Time.deltaTime);
         print(teste);
-        FullscreenEffectController.instace.UpdateFullscreenEffect(teste, GameController.instance.Correr);
+        //FullscreenEffectController.instace.UpdateFullscreenEffect(teste, GameController.instance.Correr);
 
 
         AnimationController.instance.anim.SetFloat("Run", teste);
