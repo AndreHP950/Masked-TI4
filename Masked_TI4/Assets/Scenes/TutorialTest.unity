@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 6a1c415ec3a4d3d449719d4aaca1941d, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 227428c034698e141854bea43352b17c, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 14071d88f2ae7f54a8855b6b74826be5, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -1830,7 +1830,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 266231077}
+  m_Mesh: {fileID: 1617743944}
 --- !u!33 &81188371
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -13539,6 +13539,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   data: {fileID: 11400000, guid: f288ae1f4751b564a96ac7587541f7a2, type: 2}
   Correr: {fileID: -876546973899608171, guid: 70bd3679f52c0a84e9d2f8330d4ff0bb, type: 3}
+  timeControl: {fileID: 0}
 --- !u!4 &596048552
 Transform:
   m_ObjectHideFlags: 0

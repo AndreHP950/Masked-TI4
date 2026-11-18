@@ -47,7 +47,7 @@ public class TestePlayerCC : MonoBehaviour
 
     float teste;
 
-    public SpeedLinesController speedLines;
+    //public SpeedLinesController speedLines;
 
 
     private void Awake()
@@ -148,8 +148,9 @@ public class TestePlayerCC : MonoBehaviour
         //=====================================
         //VFX SpeedLines
         //=====================================
-        speedLines.SetSpeedLinesIntensity(Mathf.InverseLerp(6f, 12f, currentSpeed));
-        Debug.Log(currentSpeed);
+
+        //speedLines.SetSpeedLinesIntensity(Mathf.InverseLerp(6f, 12f, currentSpeed));
+        //Debug.Log(currentSpeed);
 
         // =====================================
         // CHARACTER MOVEMENT
