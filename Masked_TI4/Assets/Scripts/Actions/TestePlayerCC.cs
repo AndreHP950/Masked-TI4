@@ -271,6 +271,10 @@ public class TestePlayerCC : MonoBehaviour
             AudioManager.instance.PlaySFX(2);
             Destroy(other.gameObject);
         }
+        if(other.gameObject.tag == "Laser")
+        {
+            PlayerRespawn.instance.RespawnPlayer();
+        }
     }
 
 
