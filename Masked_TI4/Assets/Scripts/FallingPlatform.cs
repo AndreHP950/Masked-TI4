@@ -15,9 +15,11 @@ public class FallingPlatform : MonoBehaviour
         rb.useGravity = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (!triggered && collision.gameObject.CompareTag("Player"))
+        Debug.Log("Trigger com: " + other.name + " | tag: " + other.tag);
+
+        if (!triggered && other.CompareTag("Player"))
         {
             triggered = true;
             StartCoroutine(Fall());
@@ -27,10 +29,9 @@ public class FallingPlatform : MonoBehaviour
     private IEnumerator Fall()
     {
         animator.SetTrigger("Shake");
-
         yield return new WaitForSeconds(fallDelay);
 
-        animator.enabled = false; 
+        animator.enabled = false;
         rb.isKinematic = false;
         rb.useGravity = true;
         rb.constraints = RigidbodyConstraints.FreezeRotation;
