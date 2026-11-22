@@ -41,7 +41,7 @@ public class GameOverController : MonoBehaviour
     {
         if (PlayerRespawn.instance != null)
         {
-            PlayerRespawn.instance.RespawnPlayer();
+            PlayerRespawn.instance.Respawn();
         }
 
         _uiDocument.enabled = false;

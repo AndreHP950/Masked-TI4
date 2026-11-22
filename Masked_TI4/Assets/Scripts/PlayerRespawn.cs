@@ -11,11 +11,25 @@ public class PlayerRespawn : MonoBehaviour
     {
         instance = this;
     }
-    void Update()
+
+    private void Update()
     {
         if (transform.position.y <= limiteY)
         {
-            Respawn();
+            Morrer();
+        }
+    }
+
+    public void Morrer()
+    {
+        Debug.Log("Morreu");
+        if (GameOverController.instance != null)
+        {
+            GameOverController.instance.TriggerGameOver();
+        }
+        else
+        {
+            RespawnPlayer();
         }
     }
 
@@ -24,17 +38,7 @@ public class PlayerRespawn : MonoBehaviour
         pontoRespawn = novoPonto;
     }
 
-    private void Respawn()
-    {
-        CharacterController cc = GetComponent<CharacterController>();
-        if (cc != null) cc.enabled = false;
-
-        transform.position = pontoRespawn.position;
-
-        if (cc != null) cc.enabled = true;
-    }
-
-    public void RespawnPlayer()
+    public void Respawn()
     {
         if (pontoRespawn == null)
             return;
@@ -50,6 +54,12 @@ public class PlayerRespawn : MonoBehaviour
 
         if (cc != null)
             cc.enabled = true;
+    }
+
+    public void RespawnPlayer()
+    {
+        GameOverController.instance.TriggerGameOver();
+
     }
 
 
