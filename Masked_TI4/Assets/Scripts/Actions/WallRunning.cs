@@ -45,6 +45,14 @@ public class WallRunning : MonoBehaviour
     private void Update()
     {
         CheckForWall();
+        if(wallRight || wallLeft)
+        {
+            AnimationController.instance.anim.SetBool("Wallrunning", true);
+        }
+        else
+        {
+            AnimationController.instance.anim.SetBool("Wallrunning", false);
+        }
         StateMachine();
     }
 
@@ -87,6 +95,14 @@ public class WallRunning : MonoBehaviour
     {
         if ((wallLeft || wallRight) && verticalInput > 0 && AboveGround() && !exitingWall)
         {
+            if (wallLeft)
+            {
+                AnimationController.instance.anim.SetInteger("Pos", 1);
+            }
+            if (wallRight)
+            {
+                AnimationController.instance.anim.SetInteger("Pos", 2);
+            }
             if (!pm.wallrunning) StartWallRun();
             if (wallRunTimer > 0) wallRunTimer -= Time.deltaTime;
 
