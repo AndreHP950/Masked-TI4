@@ -20015,63 +20015,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerTraps
   tempoParaMorrer: 2
---- !u!1001 &803196233
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 043066020fec84140b2d7d385bd577ea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 64.16
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 043066020fec84140b2d7d385bd577ea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 16.04
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 043066020fec84140b2d7d385bd577ea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -185.07
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 043066020fec84140b2d7d385bd577ea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 043066020fec84140b2d7d385bd577ea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 043066020fec84140b2d7d385bd577ea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 043066020fec84140b2d7d385bd577ea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 043066020fec84140b2d7d385bd577ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 043066020fec84140b2d7d385bd577ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 043066020fec84140b2d7d385bd577ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 043066020fec84140b2d7d385bd577ea, type: 3}
-      propertyPath: m_Name
-      value: "AssetsIlumina\xE7ao.fbx_LustrePendente"
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 043066020fec84140b2d7d385bd577ea, type: 3}
 --- !u!1 &820252625
 GameObject:
   m_ObjectHideFlags: 0
@@ -24948,7 +24891,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 999431982}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -30289,7 +30232,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157800931}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -49544,63 +49487,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.011942238, y: 0.009159733, z: 0.009159731}
   m_Center: {x: -2.3611893e-10, y: 0.00014714687, z: -0.0009107284}
---- !u!1001 &2001195165
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 721d1739f78179c42941957e5456b5df, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 65.247696
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 721d1739f78179c42941957e5456b5df, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 15.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 721d1739f78179c42941957e5456b5df, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -183.99597
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 721d1739f78179c42941957e5456b5df, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 721d1739f78179c42941957e5456b5df, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 721d1739f78179c42941957e5456b5df, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 721d1739f78179c42941957e5456b5df, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 721d1739f78179c42941957e5456b5df, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 721d1739f78179c42941957e5456b5df, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 721d1739f78179c42941957e5456b5df, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 721d1739f78179c42941957e5456b5df, type: 3}
-      propertyPath: m_Name
-      value: "AssetsIlumina\xE7ao.fbx_LampadaRetangular"
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 721d1739f78179c42941957e5456b5df, type: 3}
 --- !u!1 &2010918752
 GameObject:
   m_ObjectHideFlags: 0
@@ -53353,7 +53239,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4387446953229170807, guid: 4573f21768cd0a744b455e97c42d74bb, type: 3}
+  - {fileID: 2100000, guid: 6cfeb5c7a5ede5042b60134dcafa4171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -53923,5 +53809,3 @@ SceneRoots:
   - {fileID: 916679370}
   - {fileID: 2092335494}
   - {fileID: 1790466068}
-  - {fileID: 803196233}
-  - {fileID: 2001195165}
