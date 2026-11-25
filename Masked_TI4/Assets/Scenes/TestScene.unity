@@ -49028,6 +49028,17 @@ MonoBehaviour:
   player: {fileID: 466453952}
   viewAngle: 60
   range: 10
+  loseTargetRange: 15
+  pivot: {fileID: 0}
+  turnSpeed: 180
+  onlyHorizontal: 0
+  aimTolerance: 5
+  returnToRest: 1
+  projectilePrefab: {fileID: 8992648719673038690, guid: a87566ffc460c254b9dd5e1f56fd0df2, type: 3}
+  firePoint: {fileID: 870778914}
+  projectileSpeed: 20
+  fireRate: 1
+  firstShotDelay: 0.5
   turretRenderer: {fileID: 870778912}
   alertColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!136 &870778911
@@ -116460,6 +116471,26 @@ PrefabInstance:
     - target: {fileID: 4865695489327205252, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886051496952963237, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
+      propertyPath: exitWallTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886051496952963237, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
+      propertyPath: wallRunSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886051496952963237, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
+      propertyPath: maxWallRunTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886051496952963237, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
+      propertyPath: wallSwitchSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886051496952963237, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
+      propertyPath: wallCheckDistance
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4902740918012805274, guid: f009e194d6624fc46b2933388efd31e8, type: 3}
       propertyPath: m_Layer
