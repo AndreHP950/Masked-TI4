@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: BackPack
-    second: {fileID: 2100000, guid: a4bfe6ec208c7b945a63c5e2cfb16b2b, type: 2}
+    second: {fileID: 2100000, guid: 7faf0d4a98be6ff488ef6381602f27d7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: DoubleSide
-    second: {fileID: 2100000, guid: d1c60098b47824f4599bc8156cd07674, type: 2}
+    second: {fileID: 2100000, guid: 9182a493b2ee042428dae9105d683237, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: LowerBody
-    second: {fileID: 2100000, guid: d9cf6e340b9cac44ea3f0158e82da4bd, type: 2}
+    second: {fileID: 2100000, guid: 0047a9e8106ad6b459fcf34b92ff29bb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: UpperBody
-    second: {fileID: 2100000, guid: 1cc66b43168272b4da937bc943a157ec, type: 2}
+    second: {fileID: 2100000, guid: 510c362cdbf36e441bdd3e9d333d1631, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
