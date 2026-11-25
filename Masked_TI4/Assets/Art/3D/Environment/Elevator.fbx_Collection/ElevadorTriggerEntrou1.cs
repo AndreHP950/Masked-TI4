@@ -15,7 +15,7 @@ public class ElevadorTriggerEntrou1 : MonoBehaviour
         }
         if(timer > 3f)
         {
-            PlayerRespawn.instance.RespawnPlayer();
+            PlayerRespawn.instance.Respawn();
             timer = 0;
             animator.SetBool("Entrou", false);
         }
