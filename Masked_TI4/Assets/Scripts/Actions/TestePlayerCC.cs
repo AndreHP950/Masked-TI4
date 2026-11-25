@@ -74,6 +74,8 @@ public class TestePlayerCC : MonoBehaviour
 
         LedgeGrab ledge = GetComponent<LedgeGrab>();//lucas lima
 
+        AnimationController.instance.anim.SetInteger("Pos", 0);
+
         if (ledge != null && ledge.IsGrabbing)
         {
             verticalVelocity = 0f;
