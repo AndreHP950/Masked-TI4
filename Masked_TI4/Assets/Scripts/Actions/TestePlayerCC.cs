@@ -99,7 +99,7 @@ public class TestePlayerCC : MonoBehaviour
         }
         else
         {
-            
+
             AnimationController.instance.anim.SetBool("Grounded", false);
             Floored = false;
             coyoteTimer -= Time.deltaTime;
@@ -138,7 +138,7 @@ public class TestePlayerCC : MonoBehaviour
         {
             float accelerationRate = sprinting ? sprintAcceleration : acceleration;
 
-            currentSpeed = Mathf.MoveTowards(currentSpeed,targetSpeed,accelerationRate * Time.deltaTime);
+            currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, accelerationRate * Time.deltaTime);
         }
         else
         {
@@ -173,7 +173,7 @@ public class TestePlayerCC : MonoBehaviour
         {
             Quaternion targetRotation = Quaternion.LookRotation(cameraForward);
 
-            transform.rotation = Quaternion.Slerp( transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
     }
 
@@ -202,7 +202,7 @@ public class TestePlayerCC : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        AnimationController.instance.anim.SetBool("Jump",true);
+        AnimationController.instance.anim.SetBool("Jump", true);
         if (!context.performed)
             return;
 
@@ -213,7 +213,7 @@ public class TestePlayerCC : MonoBehaviour
             verticalVelocity = jumpforce;
             jumpsRemaining--;
             coyoteTimer = 0f;
-            
+
             AudioManager.instance.PlaySFX(1);
             return;
         }
@@ -223,7 +223,7 @@ public class TestePlayerCC : MonoBehaviour
         {
             verticalVelocity = jumpforce;
             jumpsRemaining--;
-           
+
             AudioManager.instance.PlaySFX(1);
         }
     }
@@ -271,14 +271,14 @@ public class TestePlayerCC : MonoBehaviour
             AudioManager.instance.PlaySFX(2);
             Destroy(other.gameObject);
         }
-        if(other.gameObject.tag == "Laser")
+        if (other.gameObject.tag == "Laser")
         {
             PlayerRespawn.instance.RespawnPlayer();
         }
     }
 
 
-    public void UpdateAnim()
+    /*public void UpdateAnim()
     {
         float target = 1f;
         FullScreenPassRendererFeature reder;
@@ -286,11 +286,23 @@ public class TestePlayerCC : MonoBehaviour
         {
             target = sprinting ? 2f : 1f;
         }
-
         teste = Mathf.MoveTowards(teste,target,1.5f * Time.deltaTime);
         print(teste);
         //FullscreenEffectController.instace.UpdateFullscreenEffect(teste, GameController.instance.Correr);
 
+
+        AnimationController.instance.anim.SetFloat("Run", teste);
+    }*/
+    public void UpdateAnim()
+    {
+        float target = 0f;
+
+        if (new Vector2(x, z).sqrMagnitude > 0.01f)
+        {
+            target = sprinting ? 2f : 1f;
+        }
+
+        teste = Mathf.MoveTowards(teste, target, 1.5f * Time.deltaTime);
 
         AnimationController.instance.anim.SetFloat("Run", teste);
     }
