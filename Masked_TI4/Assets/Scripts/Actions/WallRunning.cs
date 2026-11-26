@@ -332,6 +332,7 @@ public class WallRunning : MonoBehaviour
 
     private void BeginSwitch(RaycastHit hit, int side, Vector3 forward)
     {
+        // isto cuida da troca de lado\começa 
         state = WallState.Switching;
         pm.wallrunning = true;
         switchNormal = hit.normal;
@@ -393,6 +394,9 @@ public class WallRunning : MonoBehaviour
 
     private void UpdateAnimation()
     {
+
+        // aqui é pra ser o que cuida das animações pra quando ele muda de lado e tals
+       
         Animator anim = AnimationController.instance.anim;
         bool onWall = state != WallState.None;
 
