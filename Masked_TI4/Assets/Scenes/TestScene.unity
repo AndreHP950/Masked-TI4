@@ -1410,6 +1410,121 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1001 &295379168
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 67.02197
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 59.00039
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+      propertyPath: m_Name
+      value: Jogo do TI 4.fbx_TorreAutomatica
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -8533051271547523839, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 295379172}
+    - targetCorrespondingSourceObject: {fileID: 3433901949096568796, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 295379171}
+  m_SourcePrefab: {fileID: 100100000, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+--- !u!1 &295379169 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3433901949096568796, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+  m_PrefabInstance: {fileID: 295379168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &295379170 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8533051271547523839, guid: 6de4f62694cf23349b97eeb25792f629, type: 3}
+  m_PrefabInstance: {fileID: 295379168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &295379171
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295379169}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2894115, y: 2.220255, z: 3.3930206}
+  m_Center: {x: 0, y: 0.53825355, z: 0.06332016}
+--- !u!65 &295379172
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295379170}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.025465317, y: 0.01701796, z: 0.035668153}
+  m_Center: {x: -0.000022315979, y: 0.0024655238, z: 0.009184971}
 --- !u!43 &325497679
 Mesh:
   m_ObjectHideFlags: 0
@@ -118022,3 +118137,4 @@ SceneRoots:
   - {fileID: 691940904}
   - {fileID: 764471660}
   - {fileID: 2124913693}
+  - {fileID: 295379168}
